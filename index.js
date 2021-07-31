@@ -12,6 +12,4 @@ client.commands = new Collection();
 await commands(client, './commands');
 await events(client, './events');
 
-console.log(client.commands);
-
 client.login(process.env.BOT_TOKEN);

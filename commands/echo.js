@@ -10,12 +10,14 @@ export const data = {
 		},
 	],
 };
+
 export const slash = true;
+
 export const interaction = async (client, interaction) => {
 	const reply = interaction.options.getString('input');
 	await interaction.reply(reply);
 };
 export const execute = async (client, msg, args) => {
 	const reply = args.join(' ');
-	await msg.channel.send(reply);
+	await msg.reply(reply);
 };
