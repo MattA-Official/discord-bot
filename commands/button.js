@@ -27,7 +27,7 @@ export const interaction = async (client, interaction) => {
 		if (i.customId === 'primary') {
 			await interaction.editReply({
 				content: 'Pong!',
-				components: [],
+				components: [row],
 			});
 		}
 	});
