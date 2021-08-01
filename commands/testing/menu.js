@@ -33,19 +33,4 @@ export const interaction = async (client, interaction) => {
 	const row = new MessageActionRow().addComponents(menu);
 
 	await interaction.reply({ content: 'ping...', components: [row] });
-
-	const filter = (i) => i.customId === 'select';
-	const collector = interaction.channel.createMessageComponentCollector({
-		filter,
-		time: 15000,
-	});
-
-	collector.on('collect', async (i) => {
-		if (i.customId === 'select') {
-			await interaction.editReply({
-				content: 'Pong!',
-				components: [row],
-			});
-		}
-	});
 };

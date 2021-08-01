@@ -3,5 +3,5 @@ export const data = {
 };
 
 export const interaction = async (client, interaction) => {
-	await interaction.reply('Button Pressed!');
+	await interaction.update('Pong!');
 };
