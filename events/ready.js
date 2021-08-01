@@ -7,9 +7,19 @@ export const execute = async (client) => {
 		.filter((command) => command.slash === true)
 		.map((command) => command.data);
 
-	if (process.env.NODE_ENV != 'production') {
-		await client.guilds.cache.get('854750621257564171')?.commands.set(commands);
-	} else {
-		await client.application?.commands.set(commands);
-	}
+	await client.guilds.cache.get(process.env.GUILD_ID)?.commands.set(commands);
+
+	const cmds = await client.guilds.cache
+		.get(process.env.GUILD_ID)
+		?.commands.fetch();
+
+	client.commands
+		.filter((command) => command.slash === true)
+		.filter((command) => command.permissions)
+		.each(async (command) => {
+			const cmd = await cmds
+				.filter((cmd) => cmd.name === command.data.name)
+				?.first();
+			if (cmd) cmd.permissions?.set({ permissions: command.permissions });
+		});
 };

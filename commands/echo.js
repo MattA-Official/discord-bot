@@ -9,7 +9,16 @@ export const data = {
 			required: true,
 		},
 	],
+	defaultPermission: false,
 };
+
+export const permissions = [
+	{
+		id: '366652352125599744',
+		type: 'USER',
+		permission: true,
+	},
+];
 
 export const slash = true;
 
