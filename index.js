@@ -12,8 +12,8 @@ client.buttons = new Collection();
 client.menus = new Collection();
 
 await commands(client, './commands');
-await buttons(client, './buttons');
-await menus(client, './menus');
+await buttons(client, './components/buttons');
+await menus(client, './components/menus');
 await events(client, './events');
 
 client.login(process.env.BOT_TOKEN);
