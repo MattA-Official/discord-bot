@@ -3,5 +3,7 @@ export const data = {
 };
 
 export const interaction = async (client, interaction) => {
-	await interaction.reply('Something was Selected!');
+	const option = interaction.values[0];
+
+	await interaction.reply(`${option} was Selected!`);
 };
