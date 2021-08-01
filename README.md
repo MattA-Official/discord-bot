@@ -69,7 +69,10 @@ export const data = {
 	name: 'name',
 	description: 'a description of what the command does',
 	options: [], // optional - array of #ApplicationCommandOption
+	defaultPermissions: false, // optional - boolean whether to allow access by default
 };
+
+export const permissions = []; // optional - array of #ApplicationCommandPermission
 ```
 
 ### Message
