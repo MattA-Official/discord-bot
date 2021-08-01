@@ -62,7 +62,7 @@ Please adhere to this project's [`code of conduct`](/code_of_conduct.md).
 
 ## Commands
 
-All commands require the following data export
+All commands require the following data export:
 
 ```js
 export const data = {
@@ -96,6 +96,20 @@ export const slash = true;
 
 export const interaction = async (client, interaction) => {
 	// command logic in here
+};
+```
+
+## Components
+
+Components are are a framework for adding interactive elements to messages. All components require the following exports:
+
+```js
+export const data = {
+	id: 'id',
+};
+
+export const interaction = async (client, interaction) => {
+	// component logic in here
 };
 ```
 
