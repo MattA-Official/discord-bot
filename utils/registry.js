@@ -7,6 +7,7 @@ const commands = async (client, dir) => {
 
 	for await (const file of files) {
 		const command = await import(`../${dir}/${file}`);
+		if (!command.data) continue;
 		client.commands.set(command.data.name, command);
 	}
 };
