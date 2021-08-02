@@ -45,6 +45,8 @@ npm run start
 To run this project, you will need to add the following environment variables to your .env file
 
 `BOT_TOKEN` - Your bot token found at the [Discord Developer Portal](https://discord.com/developers)
+`REDIS_URI` - The URI to your [Redis](https://redis.io) db instance. Usually `redis://<user>:<pass>@127.0.0.1:6379`
+`GUILD_ID` - The ID of the guild you want to run the bot in.
 
 ## Contributing
 
@@ -125,3 +127,7 @@ export const execute = async (client, ...args) => {
 	// event logic in here
 };
 ```
+
+## Database
+
+Currently, the database only supports Redis. However, it is planned to support other databases in the future. This is due to the ease of using mulitple databases in Keyv. The database is accessed through the `client.db` object. It is not required to use a persistant database, but it is recommended. If `REDIS_URI` is not set, an in-memory store will be used.
