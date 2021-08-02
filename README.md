@@ -44,11 +44,9 @@ npm run start
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`BOT_TOKEN` - Your bot token found at the [Discord Developer Portal](https://discord.com/developers)
-
-`REDIS_URI` - The URI to your [Redis](https://redis.io) db instance. Usually `redis://<user>:<pass>@127.0.0.1:6379`
-
-`GUILD_ID` - The ID of the guild you want to run the bot in.
+1. `BOT_TOKEN` - Your bot token found at the [Discord Developer Portal](https://discord.com/developers)
+2. `REDIS_URI` - The URI to your [Redis](https://redis.io) db instance. Usually `redis://<user>:<pass>@127.0.0.1:6379`
+3. `GUILD_ID` - The ID of the guild you want to run the bot in.
 
 ## Contributing
 
