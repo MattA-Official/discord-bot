@@ -1,4 +1,5 @@
 import { Client, Intents, Collection } from 'discord.js';
+import Keyv from 'keyv';
 import 'dotenv/config';
 
 import { commands, buttons, events, menus } from './utils/registry.js';
@@ -10,6 +11,9 @@ const client = new Client({
 client.commands = new Collection();
 client.buttons = new Collection();
 client.menus = new Collection();
+client.db = new Keyv(process.env.REDIS_URI);
+
+client.db.on('error', (err) => console.error('DB connection error:', err));
 
 await commands(client, './commands');
 await buttons(client, './components/buttons');
