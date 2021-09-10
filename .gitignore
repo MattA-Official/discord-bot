@@ -40,3 +40,11 @@ node_modules/
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# config files
+config.json
+config.yml
+config.yaml
+
+# local database
+database.sqlite
